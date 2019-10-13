@@ -3,6 +3,9 @@
 
 let readlineSync = require('readline-sync');
 var planrevealed = false;
+var fightwon = false;
+var rescuedDent = false;
+
 console.log("Welcome to Batman: Arkham Asylum!");
 console.log("Press Ctrl+C to quit the game at any time")
 
@@ -18,7 +21,7 @@ function gameStart() {
 
       //Options and respective function calls go here
       lookAround();
-      gameStart();
+      
       break;
 
     case "smack a prisoner":
@@ -51,11 +54,16 @@ function lookAround() {
 
       if (planrevealed === false) {
         console.log("Joker: Do I really look like a guy with a plan?");
+        gameStart();
+
+
       } else {
         console.log("How did you know?!!?!?!")
         console.log("Who ratted me out!?!?")
         console.log("Looks like I have to start the party a little early!")
         jokerfight();
+
+        console.log("YOU WON! GAME OVER!!!")
         break;
       }
 
@@ -93,6 +101,10 @@ function lookAround() {
 
 function jokerfight() {
 
+  console.log("Batman: I'm not going to let you do that!");
+  console.log("**Fight Ensues**")
+  rescuedDent = true;
+  fightwon = true;
 
 }
 
